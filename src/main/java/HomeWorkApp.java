@@ -1,47 +1,53 @@
 public class HomeWorkApp {
     public static void main(String[] args) {
-        printThreeWords();
-        checkSumSign();
-        printColor();
-        compareNumbers();
+        firstTask(2,45);
+        secondTask(-12);
+        thirdTask(10);
+        fourthTask("Hello mazafaka", 8);
+        fifthTask(2000);
     }
 
-    private static void printThreeWords(){
-        System.out.println("Orange");
-        System.out.println("Banana");
-        System.out.println("Apple");
-    }
-    private static void checkSumSign() {
-        int a = -34;
-        int b = 3;
-        int sum  = a + b;
-        if(sum >= 0 ) {
-            System.out.println("Сумма положительная");
+    private static boolean fifthTask(int year) {
+        if(year % 4 == 0 && year % 100 != 0) {
+            System.out.println("Год високосный");
+            return true;
+        }
+        else if (year % 400 == 0) {
+            System.out.println("Год високосный");
+            return true;
         }
         else {
-            System.out.println("Сумма отрицательная");
+            System.out.println("Год не високосный");
+            return false;
         }
     }
-    private static void printColor() {
-        int color = -10;
-        if (color < 0) {
-            System.out.println("Красный");
-        }
-        else if (color < 101 && color > 0) {
-            System.out.println("Жёлтый");
-        }
-        else if (color > 100) {
-            System.out.println("Зелёный");
+
+    private static void fourthTask(String str, int number) {
+        int i = 0;
+        while (i < number) {
+            System.out.println(str);
+            i++;
         }
     }
-    private static void compareNumbers() {
-        int a = 5;
-        int b = 3;
-        if (a >= b) {
-            System.out.println("a >= b");
+
+    private static boolean thirdTask(int a) {
+        if (a >= 0) {
+            return false;
         }
-        else {
-            System.out.println("a < b");
+        else return true;
+    }
+
+    private static void secondTask(int a) {
+        if (a >= 0) {
+            System.out.println("Положительное число");
         }
+        else System.out.println("Отрицательное число");
+    }
+
+    private static boolean firstTask(int a, int b) {
+        if (a + b > 10 && a + b < 20) {
+            return true;
+        }
+        else return false;
     }
 }
