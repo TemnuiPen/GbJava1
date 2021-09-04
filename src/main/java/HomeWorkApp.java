@@ -6,10 +6,95 @@ public class HomeWorkApp {
         secondTask();
         thirdTask();
         fourthTask();
+        fifthTask(9, 3);
+        sixthTask();
+        seventhTask();
+        eighthTask();
+    }
+    private static void eighthTask() {
+        int [] array = {2, 2, 2, 1, 2, 2, 10, 1};
+        int arrayLength = array.length;
+        int number = 5;
+        array = moveArrayElementsForward(array, number);
+        System.out.println("");
+        System.out.println("Here eighth task begins");
+        System.out.println(Arrays.toString(array));
     }
 
-    private static void fifthTask() {
+    private static int[] moveArrayElementsForward(int[] array, int number) {
+        int arrayLength = array.length;
+        int a = 0;
+        int b = 0;
+        int counter = 0;
+        while (counter < number) {
+            for (int i = 0; i < arrayLength; i++) {
+                if (i == 0) {
+                    b = array[i];
+                    array[i] = array[arrayLength - 1];
+                    a = b;
+                }
+                else {
+                    b = array[i];
+                    array[i] = a;
+                    a = b;
+                }
+            }
+            counter++;
+        }
+        return array;
+    }
 
+    private static void seventhTask() {
+        int [] array = {2, 2, 2, 1, 2, 2, 10, 1};
+        boolean result = checkArraysAmount(array);
+        System.out.println("");
+        System.out.println("Here seventh task begins");
+        System.out.println(result);
+    }
+
+    private static boolean checkArraysAmount(int[] array) {
+        int leftAmount = 0;
+        int rightAmount = 0;
+        int arrayLength = array.length;
+        for (int i = 0; i < arrayLength; i++) {
+            if (i < arrayLength - 2) {
+                leftAmount = leftAmount+ array[i];
+            }
+        }
+        rightAmount = rightAmount + array[arrayLength - 2] + array[arrayLength - 1];
+        if (rightAmount == leftAmount) {
+            return true;
+        }
+        else return false;
+    }
+
+    private static void sixthTask() {
+        int [] arr = {0, 2, 3, 10, 11, 12};
+        int arrLength = arr.length;
+        int max = 0;
+        int min = 10000;
+        for (int i = 0; i < arrLength; i++){
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        System.out.println("");
+        System.out.println("Here sixth task begins");
+        System.out.println("Максимальный элемент массива, - " +  max);
+        System.out.println("Минимальный элемент массива, - " +  min);
+    }
+
+    private static void fifthTask(int len, int initialValue) {
+        int [] arr = new int[len];
+        System.out.println("");
+        System.out.println("Here fifth task begins");
+        for (int i = 0; i < len; i++) {
+            arr[i] = initialValue;
+            System.out.print(arr[i]);
+        }
     }
 
     private static void fourthTask() {
