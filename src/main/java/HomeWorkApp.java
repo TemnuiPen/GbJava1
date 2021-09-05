@@ -14,7 +14,7 @@ public class HomeWorkApp {
     private static void eighthTask() {
         int [] array = {2, 2, 2, 1, 2, 2, 10, 1};
         int arrayLength = array.length;
-        int number = 5;
+        int number = -4;
         array = moveArrayElementsForward(array, number);
         System.out.println("");
         System.out.println("Here eighth task begins");
@@ -26,21 +26,41 @@ public class HomeWorkApp {
         int a = 0;
         int b = 0;
         int counter = 0;
-        while (counter < number) {
-            for (int i = 0; i < arrayLength; i++) {
-                if (i == 0) {
-                    b = array[i];
-                    array[i] = array[arrayLength - 1];
-                    a = b;
+        if(number > -1){
+            while (counter < number) {
+                for (int i = 0; i < arrayLength; i++) {
+                    if (i == 0) {
+                        b = array[i];
+                        array[i] = array[arrayLength - 1];
+                        a = b;
+                    }
+                    else {
+                        b = array[i];
+                        array[i] = a;
+                        a = b;
+                    }
                 }
-                else {
-                    b = array[i];
-                    array[i] = a;
-                    a = b;
-                }
+                counter++;
             }
-            counter++;
         }
+        else{
+            while (counter > number) {
+                for (int i = arrayLength - 1; i >= 0; i--) {
+                    if (i == arrayLength - 1) {
+                        b = array[i];
+                        array[i] = array[0];
+                        a = b;
+                    }
+                    else {
+                        b = array[i];
+                        array[i] = a;
+                        a = b;
+                    }
+                }
+                counter--;
+            }
+        }
+
         return array;
     }
 
