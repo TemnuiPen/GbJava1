@@ -1,6 +1,13 @@
 package Animals;
 
 public class Dog extends Animal{
+    String name;
+    public Dog(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
     int runBarrier = 500;
     int swimBarrier = 10;
 

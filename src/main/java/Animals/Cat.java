@@ -1,6 +1,15 @@
 package Animals;
 
 public class Cat extends Animal{
+    String name;
+    public Cat(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     int runBarrier = 200;
     @Override
     public void run(int distance, String name) {
